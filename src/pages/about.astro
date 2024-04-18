@@ -1,4 +1,6 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
 const pageTitle = "About Me";
 const identity = {
   firstName: "Rhea",
@@ -21,17 +23,10 @@ const skills = [
 const happy = true;
 const finished = false;
 const goal = 3;
+
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
-  </head>
-  <body>
+<BaseLayout pageTitle={pageTitle}>
     <h1>About Me</h1>
     <p>Here are a few facts about me:</p>
     <ul>
@@ -50,7 +45,7 @@ const goal = 3;
     </ul>
     <p>My skills are:</p>
     <ul>
-      {skills.map((skill) => <li>{skill}</li>)}
+      {skills.map((skill) => <li class="skill">{skill}</li>)}
     </ul>
     {happy && <p>I am happy to be learning Astro!</p>}
 
@@ -63,5 +58,4 @@ const goal = 3;
         <p>My goal is not 3 days.</p>
       )
     }
-  </body>
-</html>
+</BaseLayout>
