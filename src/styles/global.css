@@ -1,6 +1,7 @@
 html {
-  background-color: #f1f5f9;
-  font-family: sans-serif;
+  background: black;
+  background-image: url('/noise-light.png');
+  font-family: 'Orbitron Variable', sans-serif;
 }
 
 body {
@@ -9,6 +10,7 @@ body {
   max-width: 80ch;
   padding: 1rem;
   line-height: 1.5;
+  color: white;
 }
 
 * {
@@ -17,6 +19,7 @@ body {
 
 h1 {
   margin: 1rem 0;
+  color: white;
 }
 
 /* nav styles */
@@ -32,16 +35,16 @@ h1 {
   width: 40px;
   height: 5px;
   margin-bottom: 10px;
-  background-color: black;
+  background-color: white;
 }
 
 .nav-links {
-  width: 100%;
+  width: 100px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background-color: white;
+  background-image: url('/noise-light.png');
   display: none;
   margin: 0;
 }
@@ -52,24 +55,63 @@ h1 {
   padding: 10px 0;
   text-decoration: none;
   font-size: 1.2rem;
-  color: black;
+  color: white;
 }
 
 .nav-links a:hover,
 .nav-links a:focus {
   background-color: gray;
-  border-radius: 30px;
+  background-image: url('/noise-light.png');
+  border-radius: 10px;
+  color: black;
 }
 
 .expanded {
   display: unset;
 }
 
+.post-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5px 0;
+  padding-left: 5px;
+  overflow: auto;
+}
+
+.post-link {
+  border: 2px double white;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 0 10px;
+  margin-bottom: 30px;
+  min-height: 100px;
+  width: 80%;
+}
+
+.post-link > a {
+  color: white;
+  text-decoration: none;
+ }
+
+.post-link:hover  {
+  border: none;
+  box-shadow: 0 0 5px 5px rgb(205, 199, 199);
+  transition: ease-in-out 5ms;
+}
+
+.post-link > a:hover {
+  text-decoration: underline;
+}
+
+
 @media screen and (min-width: 636px) {
   .nav-links {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     position: static;
     width: auto;
@@ -84,5 +126,36 @@ h1 {
 
   .hamburger {
     display: none;
+  }
+
+  .post-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin: 5px 0;
+    padding: 5px 5px;
+    overflow: auto;
+  }
+  
+  .post-link {
+    border: 2px double white;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 0 10px;
+    margin-bottom: 30px;
+    min-height: 100px;
+    width: 90%;
+  }
+
+  .post-link > a {
+   color: white;
+   text-decoration: none;
+  }
+
+  .post-link:hover {
+    border: none;
+    box-shadow: 0 0 5px rgb(205, 199, 199);
+    transition: ease-in-out 5ms;
   }
 }
