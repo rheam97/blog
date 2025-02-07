@@ -1,8 +1,27 @@
 ---
 ---
 
-<div class="hamburger">
+<ham-burger>
+  <div class="hamburger">
   <span class="line"></span>
   <span class="line"></span>
   <span class="line"></span>
 </div>
+</ham-burger>
+
+<script>
+
+class Hamburger extends HTMLElement {
+  connectedCallback() {
+
+  const burger = this.querySelector('.hamburger')
+
+  burger.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.toggle('expanded');
+  });
+}
+}
+
+
+customElements.define('ham-burger', Hamburger);
+</script>
