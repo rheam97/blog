@@ -1,10 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
+import BlogPost from '../components/BlogPost.astro';
 const pageTitle = "Home";
+const allPosts = Object.values(import.meta.glob('./posts/*.md', {eager: true}));
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <h1>Hello Astro</h1>
-  <h2>Awesomeness</h2>
+  <h1>Rheam's musings</h1>
+  <ul class="post-list">
+    {allPosts.length === 0 ? 'Must be hollow up there... no posts yet.' : allPosts.map((post) => <BlogPost url={post.url} title={post.frontmatter?.title} />)}
+   </ul>
 </BaseLayout>

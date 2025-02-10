@@ -2,6 +2,7 @@ html {
   background: black;
   background-image: url('/noise-light.png');
   font-family: 'Orbitron Variable', sans-serif;
+  font-weight: 500;
 }
 
 body {
